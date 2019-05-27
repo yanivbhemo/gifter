@@ -10,15 +10,30 @@
 
 // Import a library to help create a component
 import React from 'react';
-import { Text, AppRegistry } from 'react-native';
+import { Text, AppRegistry, View, ImageBackground } from 'react-native';
 import { name as appName } from './app.json';
+import Header from './src/components/Header';
+import Login from './src/components/Login';
 
 // Create a component
-const App = () => {
+const App = () => { 
+    const { viewStyle } = styles;
+    const backgroundImageURI = './src/img/background-screen.jpg';
+
     return (
-        <Text>Something</Text>
+        <ImageBackground source={ require(backgroundImageURI) } style={ viewStyle }>
+            <Header slogenText={'Gift the right Gifts'}/>
+            <Login />
+        </ImageBackground>
     );
 };
+
+const styles = {
+    viewStyle: {
+        flex: 1,
+        backgroundColor: '#fbf93a',
+    }
+}
 
 // Render it to the device
 AppRegistry.registerComponent(appName, () => App);
