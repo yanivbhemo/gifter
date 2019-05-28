@@ -14,6 +14,7 @@ import { Text, AppRegistry, View, ImageBackground } from 'react-native';
 import { name as appName } from './app.json';
 import Header from './src/components/Header';
 import Login from './src/components/Login';
+import UsersList from './src/components/UsersList';
 
 // Create a component
 const App = () => { 
@@ -21,9 +22,16 @@ const App = () => {
     const backgroundImageURI = './src/img/background-screen.jpg';
 
     return (
+        // ## Login Page ##
+        //{ <ImageBackground source={ require(backgroundImageURI) } style={ viewStyle }>
+        //    <Header slogenText={'Gift the right Gifts'}/>
+        //    <Login />
+        //</ImageBackground>
+
+        // ## Find Partner Screen ##
         <ImageBackground source={ require(backgroundImageURI) } style={ viewStyle }>
             <Header slogenText={'Gift the right Gifts'}/>
-            <Login />
+            <UsersList />
         </ImageBackground>
     );
 };
