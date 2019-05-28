@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "first name": "Yaniv",
+            "last name": "Ben Hamo",
+            "email": "yaniv.bhemo@gmail.com"
+        },
+        {
+            "id": 2,
+            "first name": "Nicole",
+            "last name": "Ben Hamo",
+            "email": "nicole.marcus1@gmail.com"
+        }
+    ]
+}
