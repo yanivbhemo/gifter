@@ -10,7 +10,6 @@ const Header = (props) => {
     return (
         <View style={ viewStyle }>
             <Image source={ require(logoURI) } style={ imageStyle } />
-            {/* <Text>{ props.slogenText }</Text> */}
         </View>
     );
 };
@@ -22,9 +21,9 @@ const styles = {
         alignItems: 'center',
         height: 160,
         paddingTop: 50,
-        // shadowColor: '#000',
-        // shadowOffset: { width: 0, height: 10},
-        // shadowOpacity: 0.2,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 6},
+        shadowOpacity: 0.2,
         elevation: 2,
         position: 'relative'
     },

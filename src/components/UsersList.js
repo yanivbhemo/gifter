@@ -6,19 +6,35 @@ import CardSection from './CardSection';
 
 const UserItem = ({user}) => {
     const { firstName, lastName, image, email } = user;
+    const { 
+        userImageStyle, 
+        userItemStyle, 
+        userImageContainerStyle, 
+        userItemTextStyle,
+        addBtnContainerStyle,
+        addBtnImageStyle
+     } = styles;
+    const defaultPic = 'https://www.abc.net.au/news/image/8314104-1x1-940x940.jpg';
+    const addPic = '../img/addBtn.png';
 
     return (
         <Card>
             <CardSection>
-                <View>
+                <View style={ userImageContainerStyle }>
                     <Image
-                        style={ styles.userImageStyle } 
-                        source={ { uri: image ? image : 'https://www.abc.net.au/news/image/8314104-1x1-940x940.jpg' } } 
+                        style={ userImageStyle } 
+                        source={ { uri: image ? image : defaultPic } } 
                     />
                 </View>
-                <View style={styles.userItemStyle}>
-                    <Text>{firstName} {lastName}</Text>
+                <View style={ userItemStyle }>
+                    <Text style={userItemTextStyle}>{firstName} {lastName}</Text>
                     <Text>{email}</Text>
+                </View>
+                <View style={ addBtnContainerStyle }>
+                    <Image 
+                        style={addBtnImageStyle}
+                        source={ require(addPic) } 
+                    />
                 </View>
             </CardSection>
         </Card> 
@@ -69,11 +85,28 @@ class UsersList extends Component{
 const styles = {
     userItemStyle: {
         flexDirection: 'column',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        width: 230
+    },
+    userItemTextStyle: {
+        fontSize: 18
     },
     userImageStyle: {
         height: 50,
         width: 50
+    },
+    userImageContainerStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginRight: 10
+    },
+    addBtnContainerStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    addBtnImageStyle: {
+        height: 25,
+        width: 25
     }
 };
 export default UsersList;
