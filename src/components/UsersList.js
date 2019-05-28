@@ -6,15 +6,23 @@ class UsersList extends Component{
 
     constructor(props) {
         super(props);
-        this.state = { text: 'Enter Full Name' };
+        this.state = {
+            users: [],
+            text: 'Enter Full Name' 
+        };
     }
 
     componentWillMount() {
         axios.get('https://my-json-server.typicode.com/yanivbhemo/gifter/users')
-            .then(response => console.log(response));
+            .then(response => this.setState({ users: response.data }));
+    }
+
+    renderUsers() {
+        this.state.users.map(user => <Text>{user.first name</Text>);
     }
 
     render() {
+        console.log(this.state);
         return (
             <View style={styles.viewStyle}>
                 <Text style={styles.label}>1/3   Find Your Partner</Text>

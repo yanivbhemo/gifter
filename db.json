@@ -2,15 +2,15 @@
   "users": [
       {
           "id": 1,
-          "first name": "Yaniv",
-          "last name": "Ben Hamo",
+          "firstName": "Yaniv",
+          "lastName": "Ben Hamo",
           "email": "yaniv.bhemo@gmail.com",
           "image": "https://www.abc.net.au/news/image/8314104-1x1-940x940.jpg"
       },
       {
           "id": 2,
-          "first name": "Nicole",
-          "last name": "Ben Hamo",
+          "firstName": "Nicole",
+          "lastName": "Ben Hamo",
           "email": "nicole.marcus1@gmail.com",
           "image": "https://www.abc.net.au/news/image/8314104-1x1-940x940.jpg"
       }
