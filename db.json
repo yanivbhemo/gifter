@@ -5,14 +5,14 @@
           "firstName": "Yaniv",
           "lastName": "Ben Hamo",
           "email": "yaniv.bhemo@gmail.com",
-          "image": "https://www.abc.net.au/news/image/8314104-1x1-940x940.jpg"
+          "image": ""
       },
       {
           "id": 2,
           "firstName": "Nicole",
           "lastName": "Ben Hamo",
           "email": "nicole.marcus1@gmail.com",
-          "image": "https://www.abc.net.au/news/image/8314104-1x1-940x940.jpg"
+          "image": "https://pasteboard.co/IgQ2qtQ.jpg"
       }
   ]
 }

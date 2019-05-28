@@ -1,6 +1,29 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet, Button } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Image } from 'react-native';
 import axios from 'axios';
+import Card from './Card';
+import CardSection from './CardSection';
+
+const UserItem = ({user}) => {
+    const { firstName, lastName, image, email } = user;
+
+    return (
+        <Card>
+            <CardSection>
+                <View>
+                    <Image
+                        style={ styles.userImageStyle } 
+                        source={ { uri: image ? image : 'https://www.abc.net.au/news/image/8314104-1x1-940x940.jpg' } } 
+                    />
+                </View>
+                <View style={styles.userItemStyle}>
+                    <Text>{firstName} {lastName}</Text>
+                    <Text>{email}</Text>
+                </View>
+            </CardSection>
+        </Card> 
+    );
+};
 
 class UsersList extends Component{
 
@@ -18,13 +41,19 @@ class UsersList extends Component{
     }
 
     renderUsers() {
-        this.state.users.map(user => <Text>{user.first name</Text>);
+        return this.state.users.map(user => <UserItem key={user.id} user={user}/>);
     }
 
     render() {
         console.log(this.state);
         return (
-            <View style={styles.viewStyle}>
+            <View>
+                {this.renderUsers()}
+            </View>
+        );
+    }
+}
+{/* <View style={styles.viewStyle}>
                 <Text style={styles.label}>1/3   Find Your Partner</Text>
                 <TextInput
                     style={styles.textInput}
@@ -32,29 +61,19 @@ class UsersList extends Component{
                     value={this.state.text}
                     textAlign={'center'}
                 />
-                <Button title="Search" />
-            </View>
-        );
+                <View>
+                    {this.renderUsers()}
+                </View>
+            </View> */}
+
+const styles = {
+    userItemStyle: {
+        flexDirection: 'column',
+        justifyContent: 'space-around'
+    },
+    userImageStyle: {
+        height: 50,
+        width: 50
     }
-}
-
-const styles = StyleSheet.create({
-    viewStyle: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        //backgroundColor: 'red',
-        height: 150
-    },
-    label: {
-        fontSize: 30,
-        paddingBottom: 15
-    },
-    textInput: {
-        height: 40,
-        width: 200,
-        borderBottomColor: 'gray',
-        borderBottomWidth: 1,
-    },
-});
-
+};
 export default UsersList;
