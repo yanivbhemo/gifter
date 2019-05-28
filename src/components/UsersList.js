@@ -10,7 +10,8 @@ class UsersList extends Component{
     }
 
     componentWillMount() {
-        axios.get('')
+        axios.get('https://my-json-server.typicode.com/yanivbhemo/gifter/users')
+            .then(response => console.log(response));
     }
 
     render() {
