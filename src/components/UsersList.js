@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Image, Button } from 'react-native';
+import { View, Text, TextInput, Image, Button, ScrollView } from 'react-native';
 import axios from 'axios';
 import Card from './Card';
 import CardSection from './CardSection';
@@ -63,7 +63,7 @@ class UsersList extends Component{
     render() {
         console.log(this.state);
         return (
-            <View>
+            <View style={ { flex: 1 } }>
                 <Card>
                     <CardSection>
                         <View style={ styles.searchContainer }>
@@ -78,7 +78,9 @@ class UsersList extends Component{
                         </View>
                     </CardSection>
                 </Card>
-                {this.renderUsers()}
+                <ScrollView>
+                    {this.renderUsers()}
+                </ScrollView>
             </View>
         );
     }
