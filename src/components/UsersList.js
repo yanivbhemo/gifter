@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Image, Button, ScrollView } from 'react-native';
+import { View, Text, TextInput, Image, ScrollView } from 'react-native';
 import axios from 'axios';
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
 const UserItem = ({user}) => {
     const { firstName, lastName, image, email } = user;
@@ -14,26 +15,28 @@ const UserItem = ({user}) => {
         addBtnContainerStyle,
         addBtnImageStyle
      } = styles;
-    const defaultPic = 'https://www.abc.net.au/news/image/8314104-1x1-940x940.jpg';
-    const addPic = '../img/addBtn.png';
+    const defaultPic = '../img/defaultPic.jpg';
 
     return (
         <Card>
             <CardSection>
+
                 <View style={ userImageContainerStyle }>
                     <Image
                         style={ userImageStyle } 
                         source={ { uri: image ? image : defaultPic } } 
                     />
                 </View>
+
                 <View style={ userItemStyle }>
                     <Text style={userItemTextStyle}>{firstName} {lastName}</Text>
                     <Text>{email}</Text>
                 </View>
+
                 <View style={ addBtnContainerStyle }>
-                    <Image 
-                        style={addBtnImageStyle}
-                        source={ require(addPic) } 
+                    <Button 
+                        type="imageBtn"
+                        imageURI='../img/addBtn.png'
                     />
                 </View>
             </CardSection>
@@ -74,6 +77,7 @@ class UsersList extends Component{
                             />
                             <Button 
                                 title="Search"
+                                type="searchBtn"
                             />
                         </View>
                     </CardSection>
@@ -85,18 +89,6 @@ class UsersList extends Component{
         );
     }
 }
-{/* <View style={styles.viewStyle}>
-                <Text style={styles.label}>1/3   Find Your Partner</Text>
-                <TextInput
-                    style={styles.textInput}
-                    onChangeText={(text) => this.setState({text})}
-                    value={this.state.text}
-                    textAlign={'center'}
-                />
-                <View>
-                    {this.renderUsers()}
-                </View>
-            </View> */}
 
 const styles = {
     searchContainer: {
